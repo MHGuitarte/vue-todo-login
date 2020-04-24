@@ -2,22 +2,44 @@
   <div id="log-form">
     <label for="username">Usuario</label>
     <br />
-    <input type="text" name="username" id="userInput" />
+    <input
+      required
+      type="text"
+      name="username"
+      id="userInput"
+      autocomplete="off"
+      placeholder="Introduce tu usuario"
+      v-model="username"
+    />
     <br />
     <label for="password">Contraseña</label>
     <br />
-    <input type="password" name="password" id="passInput" />
+    <input
+      required
+      type="password"
+      name="password"
+      id="passInput"
+      placeholder="Introduce tu contraseña"
+      v-model="password"
+    />
     <br />
-    <button @click="goToTodo()">Acceder</button>
+    <button @click="authenticate()">Acceder</button>
   </div>
 </template>
 
 <script>
 export default {
   name: "LoginForm",
+  data: function() {
+    return {
+      username: "",
+      password: ""
+    };
+  },
   methods: {
-    goToTodo: function() {
-      this.$router.push("Todo");
+    authenticate: function() {
+      console.log(`${this.username} ${this.password}`);
+      //this.$router.push("Todo");
     }
   }
 };
