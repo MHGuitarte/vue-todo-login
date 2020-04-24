@@ -1,22 +1,24 @@
 <template>
   <div id="log-form">
-    <UserInput />
-    <PassInput />
-    <LoginButton />
+    <label for="username">Usuario</label>
+    <br />
+    <input type="text" name="username" id="userInput" />
+    <br />
+    <label for="password">Contraseña</label>
+    <br />
+    <input type="password" name="password" id="passInput" />
+    <br />
+    <button @click="goToTodo()">Acceder</button>
   </div>
 </template>
 
 <script>
-import UserInput from "@/components/login/LoginUserInput.vue";
-import PassInput from "@/components/login/LoginPassInput.vue";
-import LoginButton from "@/components/login/LoginButton.vue";
-
 export default {
   name: "LoginForm",
-  components: {
-    UserInput,
-    PassInput,
-    LoginButton
+  methods: {
+    goToTodo: function() {
+      this.$router.push("Todo");
+    }
   }
 };
 </script>
