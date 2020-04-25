@@ -22,6 +22,7 @@
       placeholder="Introduce tu contraseña"
       v-model="password"
     />
+    <span id="error">Usuario o contraseña incorrectos.</span>
     <br />
     <button @click="authenticate()">Acceder</button>
   </div>
@@ -58,7 +59,7 @@ export default {
   box-sizing: border-box;
 }
 
-input {
+#log-form > input {
   width: 100%;
   margin: 4% auto;
   border: 0px solid transparent;
@@ -66,7 +67,7 @@ input {
   box-shadow: 0 2px 0px 0 black;
 }
 
-button {
+#log-form > button {
   display: block;
   width: 10rem;
   height: 2em;
@@ -74,6 +75,14 @@ button {
   border-radius: 4px;
   background-color: forestgreen;
   color: white;
+  font-weight: bold;
+}
+
+#error {
+  display: none;
+  margin-top: 10%;
+  color: firebrick;
+  text-decoration: firebrick underline;
   font-weight: bold;
 }
 </style>
