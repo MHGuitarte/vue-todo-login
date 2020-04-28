@@ -24,6 +24,7 @@
       @keypress.enter="authenticate()"
     />
     <span id="error">Usuario o contraseña incorrectos.</span>
+    <span>Puedes meter el usuario y la contraseña que quieras. ¡Esto es un ejemplo!</span>
     <br />
     <button @click="authenticate()">Acceder</button>
   </div>
