@@ -21,6 +21,7 @@
       id="passInput"
       placeholder="Introduce tu contraseña"
       v-model="password"
+      @keypress.enter="authenticate()"
     />
     <span id="error">Usuario o contraseña incorrectos.</span>
     <br />
@@ -39,8 +40,9 @@ export default {
   },
   methods: {
     authenticate: function() {
-      console.log(`${this.username} ${this.password}`);
-      //this.$router.push("Todo");
+      alert(`${this.username} ${this.password}`);
+      localStorage.setItem("user-token", "Esto es un token de prueba");
+      this.$router.push("Todo");
     }
   }
 };
