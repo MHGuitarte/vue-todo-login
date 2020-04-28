@@ -19,7 +19,34 @@
 
 <script>
 export default {
-    name: "Task"
+  name: "Task",
+  props: {
+    id: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    author: {
+      type: String,
+      required: true
+    },
+    creationDate: {
+      type: Date,
+      required: true
+    },
+    completionDate: {
+      type: Date,
+      required: false
+    },
+    completed: {
+      type: Boolean,
+      required: true,
+      default: false
+    }
+  }
 };
 </script>
 
