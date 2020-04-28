@@ -1,9 +1,9 @@
 <template>
-  <div class="task" id="task1">
+  <div class="task" id="task1" :class="this.completed ? 'completed' : ''">
     <div class="taskInfo">
       <h3 class="taskTitle">
         Task 1
-        <button class="disposeBtn">Completar</button>
+        <button class="disposeBtn" v-if="!completed">Completar</button>
       </h3>
     </div>
     <div class="taskAddInfo">
@@ -61,6 +61,11 @@ export default {
   padding: 0 1%;
   border: 2px solid green;
   border-radius: 15px;
+}
+
+.completed {
+  border-color: black;
+  box-shadow: 2px 0px 2px 0px rgba(204, 204, 204, 0.3);
 }
 
 .taskInfo {

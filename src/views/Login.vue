@@ -10,6 +10,8 @@
 </template>
 
 <script>
+//TODO: Necesitamos controlar el tiempo en el que expira el token de acceso
+
 // @ is an alias to /src
 import LoginForm from "@/components/login/LoginForm.vue";
 

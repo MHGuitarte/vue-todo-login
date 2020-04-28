@@ -1,7 +1,7 @@
 <template>
   <div>
     <TaskInput />
-    <TaskList />
+    <TaskList :tasksToShow="false"/>
   </div>
 </template>
 
@@ -17,6 +17,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

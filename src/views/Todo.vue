@@ -2,8 +2,8 @@
   <div id="todoContainer">
     <h1 id="title">TODO List</h1>
     <nav id="nav">
-      <a href="#" @click="toggleContainer(0)">Pendientes</a> |
-      <a href="#" @click="toggleContainer(1)">Completadas</a>
+      <a href="#" @click="toggleContainer(0)" :id="this.taskRouteLink[0]">Pendientes</a> |
+      <a href="#" @click="toggleContainer(1)" :id="this.taskRouteLink[1]">Completadas</a>
     </nav>
     <keep-alive>
       <component :is="taskContainerStatus"></component>
@@ -27,12 +27,17 @@ export default {
   data: function() {
     return {
       taskRoutes: ["TaskPending", "TaskDone"],
-      taskContainerStatus: "TaskPending"
+      taskContainerStatus: "TaskPending",
+      taskRouteLink: ["active", ""]
     };
   },
   methods: {
     toggleContainer: function(position) {
       this.taskContainerStatus = this.taskRoutes[position];
+      for (let task in this.taskRouteLink) {
+        this.taskRouteLink[task] = "";
+      }
+      this.taskRouteLink[position] = "active";
     }
   }
 };
@@ -60,7 +65,7 @@ export default {
   margin: 2px;
 }
 
-#nav a.router-link-exact-active {
+#nav a#active {
   color: #42b983;
 }
 </style>

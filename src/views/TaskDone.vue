@@ -1,5 +1,5 @@
 <template>
-  <TaskList />
+  <TaskList :tasksToShow="true"/>
 </template>
 
 <script>
@@ -12,6 +12,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>
