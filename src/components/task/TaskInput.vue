@@ -2,7 +2,7 @@
   <div id="taskInputContainer">
     <input
       type="text"
-      placeholder="¿Alguna tarea pendiente?"
+      :placeholder="taskInputPlaceholder"
       name="taskInput"
       id="taskInput"
       maxlength="200"
@@ -13,7 +13,23 @@
 
 <script>
 export default {
-  name: "TaskInput"
+  name: "TaskInput",
+  data: function() {
+    return {
+      placeholders: [
+        "¿Alguna tarea pendiente?",
+        "¡Vamos a ser productivos!",
+        "Prueba a escribir una tarea",
+        "¡Siempre hay algo por hacer!"
+      ],
+      taskInputPlaceholder: ""
+    };
+  },
+  mounted: function() {
+    this.taskInputPlaceholder = this.placeholders[
+      Math.floor(Math.random() * (this.placeholders.length + 1))
+    ];
+  }
 };
 </script>
 
